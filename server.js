@@ -1,7 +1,9 @@
 const express = require('express');
 const catalog = require('./catalog/catalog.js');
+const cors = require('cors');
 
 const server = express();
+server.use(cors());
 
 server.get('/catalog', (req, res) => {
   res.json(catalog);
@@ -14,5 +16,5 @@ server.get('/catalog/:id', (req, res) => {
 });
 
 server.listen(8000, () => {
-  console.log('hu');
+  console.log('server 8000');
 });
